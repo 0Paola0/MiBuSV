@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/dialog_background">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona el tipo de cuenta que quieres"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/arialnarrow_bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Botón Pasajero -->
+    <Button
+        android:id="@+id/btnPasajero"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Pasajero"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:background="@drawable/button_login_background"
+        android:fontFamily="@font/arialnarrow_bold"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Botón Conductor -->
+    <Button
+        android:id="@+id/btnConductor"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Conductor"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:background="@drawable/button_login_background"
+        android:fontFamily="@font/arialnarrow_bold"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Botón Cancelar -->
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Cancelar"
+        android:textAllCaps="true"
+        android:textColor="#586875"
+        android:textSize="14sp"
+        android:background="@drawable/button_cancel_background"
+        android:fontFamily="@font/arialnarrow_bold" />
+
+</LinearLayout>

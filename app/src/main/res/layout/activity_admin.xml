@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#586875"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/mibusv" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MiBUSV"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/arialnarrow_bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Panel de Administración"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/arialnarrow_bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/perfilusuario"
+            android:layout_gravity="end|center" />
+    </LinearLayout>
+
+    <!-- TabLayout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:background="@color/white"
+        app:tabTextColor="@color/tab_text_color"
+        app:tabRippleColor="@color/tab_ripple_color"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorFullWidth="false"
+        app:tabTextAppearance="@style/TextAppearance.Tab"
+        app:tabMode="fixed"
+        app:tabGravity="fill">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuarios" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conductores" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rutas" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paradas" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Contenido principal -->
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabLayout"
+        android:layout_above="@id/footer"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header dinámico (título, búsqueda y botón) -->
+        <include
+            android:id="@+id/headerTabContent"
+            layout="@layout/header_tab_content" />
+
+        <!-- RecyclerView para contenido dinámico -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp" />
+
+        <!-- Botón salir -->
+        <Button
+            android:id="@+id/btnSalir"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="Salir"
+            android:textSize="14sp"
+            android:textColor="#444444"
+            android:fontFamily="@font/arialnarrow_bold"
+            android:background="@drawable/button_salir"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="end"
+            android:elevation="2dp" />
+    </LinearLayout>
+
+    <!-- Footer -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#586875"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="©2025 MiBUSV"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:fontFamily="@font/arialnarrow_bold" />
+    </LinearLayout>
+</RelativeLayout>
+

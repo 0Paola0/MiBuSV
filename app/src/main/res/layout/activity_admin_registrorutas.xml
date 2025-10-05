@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#586875"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/mibusv" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MiBUSV"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/arialnarrow_bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registro de Ruta"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/arialnarrow_bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/perfilusuario"
+            android:layout_gravity="end|center" />
+    </LinearLayout>
+
+    <!-- Contenido principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrar Nueva Ruta"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:fontFamily="@font/arialnarrow_bold"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Formulario -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Número de Ruta -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Número de Ruta"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etNumeroRuta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ej: 113, 201, 42"
+                    android:inputType="number"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Nombre de Ruta -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre de la Ruta"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etNombreRuta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ej: Centro - Universidad"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Parada Inicial -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parada Inicial"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etParadaInicial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Buscar parada inicial..."
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Lista de paradas iniciales filtradas -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvParadasIniciales"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/edittext_background"
+                    android:padding="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone" />
+
+                <!-- Paradas Intermedias -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paradas Intermedias"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etParadasIntermedias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Buscar paradas intermedias..."
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Lista de paradas intermedias filtradas -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvParadasIntermedias"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/edittext_background"
+                    android:padding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone" />
+
+                <!-- Texto mostrando paradas intermedias seleccionadas -->
+                <TextView
+                    android:id="@+id/tvParadasIntermediasSeleccionadas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Paradas intermedias: Ninguna"
+                    android:textSize="14sp"
+                    android:textColor="#6B7280"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_user_card"
+                    android:padding="8dp" />
+
+                <!-- Parada Final -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parada Final"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etParadaFinal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Buscar parada final..."
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Lista de paradas finales filtradas -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvParadasFinales"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/edittext_background"
+                    android:padding="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone" />
+
+                <!-- Información de la ruta -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Distancia -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Distancia (km)"
+                            android:textSize="14sp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/arialnarrow_bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <EditText
+                            android:id="@+id/etDistancia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="15.5"
+                            android:inputType="numberDecimal"
+                            android:background="@drawable/edittext_background"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/arialnarrow" />
+                    </LinearLayout>
+
+                    <!-- Duración -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Duración (min)"
+                            android:textSize="14sp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/arialnarrow_bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <EditText
+                            android:id="@+id/etDuracion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="45"
+                            android:inputType="number"
+                            android:background="@drawable/edittext_background"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/arialnarrow" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Frecuencia y Precio -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Frecuencia -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Frecuencia (min)"
+                            android:textSize="14sp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/arialnarrow_bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <EditText
+                            android:id="@+id/etFrecuencia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="10"
+                            android:inputType="number"
+                            android:background="@drawable/edittext_background"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/arialnarrow" />
+                    </LinearLayout>
+
+                    <!-- Precio -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Precio ($)"
+                            android:textSize="14sp"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/arialnarrow_bold"
+                            android:layout_marginBottom="4dp" />
+
+                        <EditText
+                            android:id="@+id/etPrecio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="0.25"
+                            android:inputType="numberDecimal"
+                            android:background="@drawable/edittext_background"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/arialnarrow" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Horario de Operación -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Horario de Operación"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etHorario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ej: 6:00 AM - 10:00 PM"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="24dp" />
+
+
+                </LinearLayout>
+
+                <!-- Botones -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnCancelarRuta"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Cancelar"
+                        android:textSize="14sp"
+                        android:textColor="#444444"
+                        android:fontFamily="@font/arialnarrow_bold"
+                        android:background="@drawable/button_salir" />
+
+                    <Button
+                        android:id="@+id/btnRegistrarRuta"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Registrar Ruta"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/arialnarrow_bold"
+                        android:background="@drawable/button_agregarusuario" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Footer -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#586875"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="©2025 MiBUSV"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:fontFamily="@font/arialnarrow_bold" />
+    </LinearLayout>
+
+</RelativeLayout>

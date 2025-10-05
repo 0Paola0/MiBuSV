@@ -1,0 +1,250 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!--Header-->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#586875"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="90dp"
+            android:src="@drawable/mibusv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MiBuSV"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/arialnarrow_bold"
+            android:layout_marginStart="12dp" />
+    </LinearLayout>
+
+    <!--Footer-->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#586875"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="©2025"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:fontFamily="@font/arialnarrow_bold" />
+    </LinearLayout>
+
+    <!--Body con scroll-->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:padding="24dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicia Sesión"
+                android:textSize="20sp"
+                android:fontFamily="@font/arialnarrow_bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/user"
+                android:layout_marginBottom="50dp" />
+
+            <EditText
+                android:id="@+id/emailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo Electrónico (ejemplo@gmail.com)"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/edittext_background"
+                android:textSize="15sp"
+                android:padding="12dp"
+                android:fontFamily="@font/arialnarrow"
+                android:layout_marginBottom="20dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arialnarrow"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/passwordInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edittext_background"
+                    android:textSize="15sp"
+                    android:padding="12dp"
+                    android:paddingEnd="40dp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_centerVertical="true" />
+
+                <ImageView
+                    android:id="@+id/togglePassword"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ojo"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="Mostrar/Ocultar contraseña" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <CheckBox
+                    android:id="@+id/rememberMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recordarme"
+                    android:textSize="15sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/forgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Olvidaste tu contraseña?"
+                    android:textColor="#FF9900"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INICIAR SESIÓN"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:background="@drawable/button_login_background"
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                android:fontFamily="@font/arialnarrow_bold"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:paddingHorizontal="24dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1.5dp"
+                    android:layout_weight="1"
+                    android:background="#586875"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="o continúa como"
+                    android:textSize="12sp"
+                    android:textColor="#586875"
+                    android:fontFamily="@font/arialnarrow_bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1.5dp"
+                    android:layout_weight="1"
+                    android:background="#586875"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/guestButtonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/button_google_background"
+                android:padding="12dp"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/invitado"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entrar como Invitado"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/noAccountText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿No tienes cuenta?"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/registerLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Regístrate"
+                    android:textColor="#FF9900"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

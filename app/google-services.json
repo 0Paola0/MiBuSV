@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "223177495607",
+    "project_id": "mibusvbd",
+    "storage_bucket": "mibusvbd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223177495607:android:e514027ad5484da88e1bb2",
+        "android_client_info": {
+          "package_name": "com.example.mibusv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223177495607-bq42tor8drh8epc18gn7pt48mfl49ve0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkduae2DREeVhrWDf29Zo7k3mnDnOSW3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223177495607-bq42tor8drh8epc18gn7pt48mfl49ve0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

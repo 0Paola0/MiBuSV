@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#586875"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/mibusv" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MiBUSV"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/arialnarrow_bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registro de Parada"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/arialnarrow_bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/perfilusuario"
+            android:layout_gravity="end|center" />
+    </LinearLayout>
+
+    <!-- Contenido principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/footer"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrar Nueva Parada"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:fontFamily="@font/arialnarrow_bold"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Formulario -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Nombre de la Parada -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre de la Parada"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etNombreParada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ej: Centro Comercial Metrocentro"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Departamento -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Departamento"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etDepartamentoParada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ej: San Salvador"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Ciudad -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ciudad"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etCiudadParada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ej: San Salvador"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Coordenadas -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coordenadas"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etCoordenadasParada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ej: 13.6929, -89.2182"
+                    android:background="@drawable/edittext_background"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginBottom="8dp" />
+
+            </LinearLayout>
+
+            <!-- Botones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnCancelarParada"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Cancelar"
+                    android:textSize="14sp"
+                    android:textColor="#444444"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:background="@drawable/button_salir" />
+
+                <Button
+                    android:id="@+id/btnRegistrarParada"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Registrar Parada"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/arialnarrow_bold"
+                    android:background="@drawable/button_agregarusuario" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Footer -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#586875"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="©2025 MiBUSV"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:fontFamily="@font/arialnarrow_bold" />
+    </LinearLayout>
+
+</RelativeLayout>

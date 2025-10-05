@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.Tab" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/arialnarrow</item>
+        <item name="fontFamily">@font/arialnarrow</item>
+    </style>
+</resources>
+
+

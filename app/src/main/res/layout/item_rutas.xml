@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_user_card"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvNumeroRuta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="Ruta 113"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:fontFamily="@font/arialnarrow_bold" />
+
+            <View
+                android:id="@+id/rightStatusDot"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/user_status_dot_active" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Operativa"
+                android:textColor="#6B7280"
+                android:textSize="16sp"
+                android:fontFamily="@font/arialnarrow_bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/tvNombreRutaLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de ruta:"
+                android:textColor="#6B7280"
+                android:textSize="16sp"
+                android:fontFamily="@font/arialnarrow_bold" />
+
+            <TextView
+                android:id="@+id/tvNombreRuta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Centro - Universidad"
+                android:textColor="#6B7280"
+                android:textSize="16sp"
+                android:fontFamily="@font/arialnarrow"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+
+        <!-- Sección de Paradas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_user_card"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ruta de Paradas"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/arialnarrow_bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Parada Inicial -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Inicio:"
+                    android:textColor="#2E7D32"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/arialnarrow_bold" />
+
+                <TextView
+                    android:id="@+id/tvParadaInicial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Centro Comercial Metrocentro"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Paradas Intermedias -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🚌 Intermedias:"
+                    android:textColor="#1976D2"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/arialnarrow_bold" />
+
+                <TextView
+                    android:id="@+id/tvParadasIntermedias"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Universidad de El Salvador, Hospital Rosales, Plaza Libertad"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Parada Final -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏁 Final:"
+                    android:textColor="#D32F2F"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/arialnarrow_bold" />
+
+                <TextView
+                    android:id="@+id/tvParadaFinal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Terminal de Oriente"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/arialnarrow"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/tvPrecioLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Precio:"
+                android:textColor="#6B7280"
+                android:textSize="16sp"
+                android:fontFamily="@font/arialnarrow_bold" />
+
+            <TextView
+                android:id="@+id/tvPrecio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0.25"
+                android:textColor="#6B7280"
+                android:textSize="16sp"
+                android:fontFamily="@font/arialnarrow"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/tvHorarioLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horario:"
+                android:textColor="#6B7280"
+                android:textSize="16sp"
+                android:fontFamily="@font/arialnarrow_bold" />
+
+            <TextView
+                android:id="@+id/tvHorario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6:00 AM - 10:00 PM"
+                android:textColor="#6B7280"
+                android:textSize="16sp"
+                android:fontFamily="@font/arialnarrow"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnViewDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Ver Detalles"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:fontFamily="@font/arialnarrow_bold"
+                android:background="@drawable/btn_view_details_bg" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Eliminar"
+                android:textColor="#EF4444"
+                android:textSize="14sp"
+                android:fontFamily="@font/arialnarrow_bold"
+                android:background="@drawable/btn_delete_bg" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MiBuSV" parent="Theme.AppCompat.Light.NoActionBar"> ✅
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.MiBuSV" parent="Base.Theme.MiBuSV" />
+</resources>
