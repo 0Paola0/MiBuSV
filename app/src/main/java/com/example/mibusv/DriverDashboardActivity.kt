@@ -86,7 +86,7 @@ class DriverDashboardActivity : AppCompatActivity(), OnMapReadyCallback {
         // Inicializar GeoApiContext con tu API Key
         // ¡¡¡RECUERDA REEMPLAZAR "TU_API_KEY_AQUI"!!!
         geoApiContext = GeoApiContext.Builder()
-            .apiKey("AIzaSyAZ6KfOCzxiQSXyzOcr9zxg2zsxebIK6lQ")
+            .apiKey("API-KEY")
             .build()
 
         if (conductorId.isEmpty()) {
