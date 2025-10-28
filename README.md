@@ -18,7 +18,10 @@ El objetivo es desarrollar una aplicación móvil enfocada en la gestión de tra
 
 ## 📂 Documentación
 
-<a href="documento/Primera Fase Proyecto.pdf" target="_blank">📄 Perfil del proyecto PDF</a>  
+<a href="Primera Fase Proyecto.pdf" target="_blank">📄 Perfil del proyecto PDF</a>  
+
+<a href="MibusSV.apk" target="_blank">Descargar Aplicación</a>  
+
 
 ---
 
